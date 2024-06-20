@@ -23,13 +23,15 @@
 				<input type="radio" name="which" value="blog-user"> <label>블로거</label>
 			</fieldset>
 		</form>
-
-		<!-- <ul style="text-align: left; margin-left: 50px;"> -->
-		<ul style="text-align: center">
+		<table style="margin-left: auto; margin-right: auto; border-spacing: 10px">
 			<c:forEach items="${userList }" var="vo" varStatus="status">
-				<li style="font-size: 17px;"><a href="${pageContext.request.contextPath }/${vo.id }">${vo.id }님의 블로그</a></li>
+				<tr>
+					<td style="border: solid 1px #3879D9; border-radius: 30px; padding: 5px">
+					<a href="${pageContext.request.contextPath }/${vo.id }" style="font-size: 20px; margin: 20px">${vo.id }님의 블로그</a>
+					</td>
+				</tr>
 			</c:forEach>
-		</ul>
+		</table>
 	</div>
 </body>
 </html>
