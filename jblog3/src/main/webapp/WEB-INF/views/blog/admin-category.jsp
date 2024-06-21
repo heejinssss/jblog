@@ -29,8 +29,8 @@
 					<c:set var="count" value="${fn:length(list) }" />
 					<c:forEach items="${list }" var="vo" varStatus="status">
 						<tr>
-							<td>${- (status.index - count) }</td> <!-- 임시 -->
-							<td>${vo.name }</td> <!-- 임시 -->
+							<td>${- (status.index - count) }</td>
+							<td>${vo.name }</td>
 							<td>${postCountList[status.index] }</td>
 							<td>${vo.description }</td>
 							<td>
