@@ -29,14 +29,18 @@
 					<c:set var="count" value="${fn:length(list) }" />
 					<c:forEach items="${list }" var="vo" varStatus="status">
 						<tr>
-							<td>${count - status.index }</td>
-							<td>${vo.name }</td>
+							<td>${- (status.index - count) }</td> <!-- 임시 -->
+							<td>${vo.name }</td> <!-- 임시 -->
 							<td>${postCountList[status.index] }</td>
 							<td>${vo.description }</td>
 							<td>
-								<a href="${pageContext.request.contextPath }/${blogVo.blogId}/category/delete/${vo.no }">
-									<img src="${pageContext.request.contextPath}/assets/images/delete.jpg">
-								</a>
+								<c:if test="${vo.name != '미분류'}">
+									<a href="${pageContext.request.contextPath }/${blogVo.blogId}/category/delete/${vo.no }">
+										<img src="${pageContext.request.contextPath}/assets/images/delete.jpg">
+									</a>
+								</c:if>
+								<c:if test="${vo.name == '미분류'}">
+								</c:if>
 							</td>
 						</tr>
 					</c:forEach>
